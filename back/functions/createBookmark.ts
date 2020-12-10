@@ -4,7 +4,7 @@ import Task from './type';
 
 async function createBookmark(task: Task) {
     const params = {
-        TableName: process.env.NOTES_TABLE,
+        TableName: process.env.BOOKMARK_TABLE,
         Item: task
     }
     try {
