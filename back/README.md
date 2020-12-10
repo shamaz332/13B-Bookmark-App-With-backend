@@ -1,0 +1,1 @@
+npm install @aws-cdk/aws-appsync @aws-cdk/aws-lambda @aws-cdk/aws-dynamodb
