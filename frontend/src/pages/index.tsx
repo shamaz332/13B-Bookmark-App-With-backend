@@ -3,46 +3,45 @@ import { listBookmark } from "../graphql/queries"
 import { createBookmark } from "../graphql/mutations"
 import { API } from "aws-amplify"
 import shortid from "shortid"
+
+// login 
+import { withAuthenticator } from '@aws-amplify/ui-react'
 //material ui code
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import { Button, Grid, Typography } from "@material-ui/core";
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-
-
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
+import TextField from "@material-ui/core/TextField"
+import { Button, Grid, Typography } from "@material-ui/core"
+import Card from "@material-ui/core/Card"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardContent from "@material-ui/core/CardContent"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      '& > *': {
+      "& > *": {
         margin: theme.spacing(1),
         flexGrow: 1,
-        minWidth: 345,
+        width: 345,
       },
-
-
     },
     paper: {
       padding: theme.spacing(2),
-      textAlign: 'center',
+      textAlign: "center",
       color: theme.palette.text.secondary,
     },
     card: {
-      maxWidth: 345,
+      width: 345,
+      height:200,
       backgroundColor: "black",
-      margin: 13,
+      margin: 15,
       color: "white",
     },
-  }),
-);
-
+  })
+)
 
 interface book {
-  name: string;
-  url: string;
-  description: string;
+  name: string
+  url: string
+  description: string
 }
 
 interface incomingData {
@@ -51,8 +50,8 @@ interface incomingData {
   }
 }
 
-export default function Home() {
-  const classes = useStyles();
+export function Home() {
+  const classes = useStyles()
   const [loading, setLoading] = useState(true)
   const [bookmarkData, setBookmarkData] = useState<incomingData | null>(null)
 
@@ -67,7 +66,6 @@ export default function Home() {
         name: inputName.value,
         url: inputUrl.value,
         description: inputDescription.value,
-
       }
       const data = await API.graphql({
         query: createBookmark,
@@ -104,12 +102,82 @@ export default function Home() {
         <h1>Loading ...</h1>
       ) : (
           <div>
-            <Typography variant="h3" component="h2"> Bookmark Your Notes 💌 </Typography> <form className={classes.root} autoComplete="off"> <TextField required id="outlined-required" label="Name" variant="outlined" inputRef={node => { inputName = node }} /> <TextField required id="outlined-required" label="Url" variant="outlined" inputRef={node => { inputUrl = node }} /> <TextField required id="outlined-required" label="Description" variant="outlined" inputRef={node => { inputDescription = node }} /> </form> <br /><br /> <Button variant="contained" color="primary" onClick={addBookmarkMutation}>Add Bookmark</Button> <br /><br /> <Grid container> {bookmarkData.data && bookmarkData.data.listBookmark.map((d) => (<Card className={classes.card}> <CardActionArea> <CardContent> <Typography variant="h5" component="h2"> {d.name} </Typography> <Typography variant="body2" component="p"> {d.description} </Typography> <br />    <br /> <Button variant="contained" color="primary" href={d.url}> Learn More </Button> </CardContent> </CardActionArea> </Card>))} </Grid>
-        </div>
+            <Typography variant="h3" component="h2">
+              {" "}
+            Bookmark Your Notes 💌{" "}
+            </Typography>
+            <form className={classes.root} autoComplete="off">
+              <TextField
+                required
+                id="outlined-required"
+                label="Name"
+                variant="outlined"
+                inputRef={node => {
+                  inputName = node
+                }}
+              />{" "}
+              <TextField
+                required
+                id="outlined-required"
+                label="Url"
+                variant="outlined"
+                inputRef={node => {
+                  inputUrl = node
+                }}
+              />
+              <TextField
+                required
+                id="outlined-required"
+                label="Description"
+                variant="outlined"
+                inputRef={node => {
+                  inputDescription = node
+                }}
+              />{" "}
+            </form>{" "}
+            <br />
+            <br />
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={addBookmarkMutation}
+            >
+              Add Bookmark
+          </Button>
+            <br />
+            <br />
+            <Grid container>
+              {" "}
+              {bookmarkData.data &&
+                bookmarkData.data.listBookmark.map((d, index) => (
+                  <Card className={classes.card} key={index}>
+                    {" "}
+                    <CardActionArea>
+                      {" "}
+                      <CardContent>
+                        {" "}
+                        <Typography variant="h5" component="h2">
+                          {" "}
+                          {d.name}{" "}
+                        </Typography>{" "}
+                        <Typography variant="body2" component="p">
+                          {" "}
+                          {d.description}{" "}
+                        </Typography>{" "}
+                        <br /> <br />{" "}
+                        <Button variant="contained" color="primary" href={d.url}>
+                          {" "}
+                        Learn More{" "}
+                        </Button>{" "}
+                      </CardContent>{" "}
+                    </CardActionArea>{" "}
+                  </Card>
+                ))}{" "}
+            </Grid>
+          </div>
+        )}
+    </div>
   )
 }
-    </div >
-     
 
-  )
-}
+export default withAuthenticator(Home)
