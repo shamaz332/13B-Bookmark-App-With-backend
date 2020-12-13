@@ -5,7 +5,7 @@ import { API } from "aws-amplify"
 import shortid from "shortid"
 
 // login 
-// import { withAuthenticator } from '@aws-amplify/ui-react'
+import { withAuthenticator } from '@aws-amplify/ui-react'
 //material ui code
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
@@ -180,4 +180,4 @@ export function Home() {
   )
 }
 
-export default Home;
+export default withAuthenticator(Home);

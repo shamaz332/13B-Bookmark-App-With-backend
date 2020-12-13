@@ -1,0 +1,66 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bookmark-dev-234250-authRole",
+      "UnauthRoleArn": "arn:aws:iam::038802744462:role/amplify-bookmark-dev-234250-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::038802744462:role/amplify-bookmark-dev-234250-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-bookmark-dev-234250-deployment",
+      "UnauthRoleName": "amplify-bookmark-dev-234250-unauthRole",
+      "StackName": "amplify-bookmark-dev-234250",
+      "StackId": "arn:aws:cloudformation:us-east-1:038802744462:stack/amplify-bookmark-dev-234250/af629a40-3be0-11eb-aa4c-0a63bc702c35",
+      "AmplifyAppId": "d25ul47ckpb5zy"
+    }
+  },
+  "api": {
+    "todoamplify": {
+      "service": "AppSync",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY"
+          },
+          "additionalAuthenticationProviders": null
+        },
+        "GraphQLAPIIdOutput": "sm7fnhbe65dn7eczoci77dp3ie",
+        "GraphQLAPIEndpointOutput": "https://kp3c4mownjhsvbucvntg2bjh5q.appsync-api.us-east-1.amazonaws.com/graphql",
+        "name": "todoamplify",
+        "region": "us-east-1",
+        "GraphQLAPIKeyOutput": "da2-jt7btokb2bbn7mt7v63hvqzu2e"
+      },
+      "lastPushTimeStamp": "2020-12-11T18:45:36.118Z"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2020-12-11T19:03:23.208Z"
+    }
+  },
+  "auth": {
+    "bookmark6c16e99e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-bookmark-dev-234250-deployment/amplify-cfn-templates/auth/bookmark6c16e99e-cloudformation-template.yml",
+        "logicalId": "authbookmark6c16e99e"
+      },
+      "lastPushTimeStamp": "2020-12-11T20:40:19.151Z",
+      "output": {
+        "AppClientSecret": "1gicngmfah237h5eqipdto8gnbeae0h08vjulmne9nra9jiqp34s",
+        "UserPoolId": "us-east-1_7wOcj4lwT",
+        "AppClientIDWeb": "pe2erbk8u3gfllpenrg4gcbom",
+        "AppClientID": "2g2tidg9q0k5u51dmthi5stua6",
+        "HostedUIDomain": "bookmark6c16e99e-6c16e99e-dev",
+        "IdentityPoolId": "us-east-1:e2f9de73-d421-4629-8ea5-4bb6a4aa094a",
+        "IdentityPoolName": "bookmark6c16e99e_identitypool_6c16e99e__dev",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:8000/\"],\"LogoutURLs\":[\"http://localhost:8000/\"]}",
+        "UserPoolName": "bookmark6c16e99e_userpool_6c16e99e"
+      },
+      "lastPushDirHash": "Qh2Od2vWDpa1zW/ghD7wKhvpvvk="
+    }
+  }
+}

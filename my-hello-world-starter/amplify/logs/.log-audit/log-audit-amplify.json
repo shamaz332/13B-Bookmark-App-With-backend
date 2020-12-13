@@ -1,0 +1,19 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "/home/shamaz/web root/2020 bootcamp/projects after 13/13B/todo-with-appsync and amplify/my-hello-world-starter/amplify/logs/.log-audit/log-audit-amplify.json",
+    "files": [
+        {
+            "date": 1607712127908,
+            "name": "/home/shamaz/web root/2020 bootcamp/projects after 13/13B/todo-with-appsync and amplify/my-hello-world-starter/amplify/logs/amplify-cli-2020-12-11.log",
+            "hash": "b398dbdac8d4be9687308d60500aad94"
+        },
+        {
+            "date": 1607718848662,
+            "name": "/home/shamaz/web root/2020 bootcamp/projects after 13/13B/todo-with-appsync and amplify/my-hello-world-starter/amplify/logs/amplify-cli-2020-12-12.log",
+            "hash": "3e746174e9e876ff67587cfc7b0981a6"
+        }
+    ]
+}

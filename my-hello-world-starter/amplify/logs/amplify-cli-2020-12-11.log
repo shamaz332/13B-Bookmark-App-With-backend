@@ -1,0 +1,16 @@
+2020-12-11T18:42:07.913Z|info : amplify init core  
+2020-12-11T18:42:50.387Z|info : amplify-provider-awscloudformation.amplify-service-permission-check.checkAmplifyServiceIAMPermission.amplifyClient.listApps([])
+2020-12-11T18:42:51.574Z|info : amplify-provider-awscloudformation.amplify-service-manager.init.amplifyClient.createApp([{"name":"[***]mark","environmentVariables":{"_LIVE_PACKAGE_UPDATES":"[{\"pkg\":\"@aws-amplify/cli\",\"type\":\"npm\",\"version\":\"latest\"}]"}}])
+2020-12-11T18:42:54.331Z|info : amplify-provider-awscloudformation.amplify-service-manager.init.amplifyClient.getBackendEnvironment([{"appId":"[***]kpb5zy","environmentName":"[***]ev"}])
+2020-12-11T18:42:54.931Z|error : amplify-provider-awscloudformation.amplify-service-manager.init.amplifyClient.getBackendEnvironment([{"appId":"[***]kpb5zy","environmentName":"[***]ev"}])
+NotFoundException: BackendEnvironment dev does not exist.
+2020-12-11T18:42:54.932Z|info : amplify-provider-awscloudformation.amplify-service-manager.init.amplifyClient.getBackendEnvironment([{"appId":"[***]kpb5zy","environmentName":"[***]ev","stackName":"[***]ify-[***]mark-[***]ev-[***]250","deploymentArtifacts":"amplify-bookmark-dev-234250-deployment"}])
+2020-12-11T18:43:29.251Z|info : amplify-provider-awscloudformation.attach-backend.storeCurrentCloudBackend.s3.uploadFile([{"Key":"[***]rent-[***]ud-[***]d.zip"}])
+2020-12-11T18:43:29.256Z|info : amplify-provider-awscloudformation.aws-s3.uploadFile.s3.putObject([{"Key":"[***]rent-[***]ud-[***]d.zip","Bucket":"[***]ify-[***]mark-[***]ev-[***]250-[***]ment"}])
+2020-12-11T18:43:30.916Z|info : amplify-provider-awscloudformation.attach-backend.uploadFile.s3.uploadFile([{"Key":"[***]ify-[***]json"}])
+2020-12-11T18:43:30.918Z|info : amplify-provider-awscloudformation.aws-s3.uploadFile.s3.putObject([{"Key":"[***]ify-[***]json","Bucket":"[***]ify-[***]mark-[***]ev-[***]250-[***]ment"}])
+2020-12-11T18:45:25.845Z|info : amplify add codegen  {"apiId":"[***]zoci77dp3ie","yes":false}
+2020-12-11T18:45:34.247Z|info : amplify-provider-awscloudformation.utility-functions.getGraphQLApiDetails.appSyncModel.appSync.getGraphqlApi([{"apiId":"[***]zoci77dp3ie"}])
+2020-12-11T18:45:35.050Z|info : amplify-provider-awscloudformation.utility-functions.getAppSyncApiKeys.appSync.listApiKeys([{"apiId":"[***]zoci77dp3ie"}])
+2020-12-11T18:45:52.410Z|info : amplify-provider-awscloudformation.utility-functions.getIntrospectionSchema.appSyncModel.appSync.getIntrospectionSchema([{"apiId":"[***]zoci77dp3ie","format":"JSON"}])
+2020-12-11T18:58:29.633Z|info : amplify add hosting  
